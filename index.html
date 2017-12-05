@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Paint</title>
+	<link href="css/estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<center>
+	<div id="padre"> 
+		<div id="canvasDiv">
+			<canvas id="myCanvas" width="1000" height="500"></canvas>
+		</div>
+		<!--<button id="btn_reiniciar">Reiniciar</button>-->
+		<div id="menu">
+			<table>
+				<tr>
+					<td id="img-plus">
+						<input type="image" src="images/svg/plus.svg" onclick="procesaBoton('plus')" />
+					</td>
+					<td id="img-minus">
+						<input type="image" src="images/svg/minus.svg" onclick="procesaBoton('minus')" />
+					</td>
+				</tr>
+				<tr>
+					<td id="img-line">
+						<input type="image" src="images/svg/linea-recta.svg" onclick="procesaBoton('line')" />
+					</td>
+					<td id="img-pencil">
+						<input type="image" src="images/svg/pencil.svg" onclick="procesaBoton('pencil')" />
+					</td>
+				</tr>
+				<tr>
+					<td id="img-rect">
+						<input type="image" src="images/svg/rectangulo.svg" onclick="procesaBoton('rect')" />
+					</td>
+					<td id="img-clear">
+						<input type="image" src="images/svg/document.svg" onclick="procesaBoton('clear')" />
+					</td>
+				</tr>
+				<tr>
+					<td id="img-circle">
+						<input type="image" src="images/svg/media-record.svg" onclick="procesaBoton('circle')" />
+					</td>
+					<td id="img-download">
+						 <a id="download">
+						  <img src="images/svg/arrow-circle-bottom.svg" alt="Download" style="border:0;">
+						</a> 
+					</td>
+				</tr>
+				<tr>
+					<td id="img-download">
+						 <a id="download">
+						  <img src="images/svg/arrow-circle-bottom.svg" alt="Download" style="border:0;">
+						</a> 
+					</td>
+					<td id="img-clipboard">
+						<input type="image" src="images/svg/clipboard.svg" onclick="procesaBoton('clipboard')" />
+					</td>
+				</tr>
+				
+				<!--colores-->
+				<tr>
+					<td id="img-red">
+						<input type="submit" style="background-color:red;border: 0" value="" onclick="procesaBoton('red')">
+					</td>
+					<td id="img-blue">
+						<input type="submit" style="background-color:blue;border: 0" value="" onclick="procesaBoton('blue')">
+					</td>
+				</tr>
+				<tr>
+					<td id="img-green">
+						<input type="submit" style="background-color:green;border: 0" value="" onclick="procesaBoton('green')">
+					</td>
+					<td id="img-white">
+						<input type="submit" style="background-color:white;border: 0" value="" onclick="procesaBoton('white')">
+					</td>
+				</tr>
+				<tr>
+					<td id="img-black">
+						<input type="submit" style="background-color:black;border: 0" value="" onclick="procesaBoton('black')">
+					</td>
+					<td id="img-yellow">
+						<input type="submit" style="background-color:yellow;border: 0" value="" onclick="procesaBoton('yellow')">
+					</td>
+				</tr>
+				<tr>
+					<td id="img-pink">
+						<input type="submit" style="background-color:pink;border: 0" value="" onclick="procesaBoton('pink')">
+					</td>
+					<td id="img-chartreuse">
+						<input type="submit" style="background-color:chartreuse;border: 0" value="" onclick="procesaBoton('chartreuse')">
+					</td>
+				</tr>
+				<tr>
+					<td id="img-brown">
+						<input type="submit" style="background-color:brown;border: 0" value="" onclick="procesaBoton('brown')">
+					</td>
+					<td id="img-crimson">
+						<input type="submit" style="background-color:crimson;border: 0" value="" onclick="procesaBoton('crimson')">
+					</td>
+				</tr>
+				<tr>
+					<td id="img-grey">
+						<input type="submit" style="background-color:grey;border: 0" value="" onclick="procesaBoton('grey')">
+					</td>
+					<td id="img-magenta">
+						<input type="submit" style="background-color:magenta;border: 0" value="" onclick="procesaBoton('magenta')">
+					</td>
+				</tr>
+				<tr>
+					<td id="img-navy">
+						<input type="submit" style="background-color:navy;border: 0" value="" onclick="procesaBoton('navy')">
+					</td>
+					<td id="img-salmon">
+						<input type="submit" style="background-color:salmon;border: 0" value="" onclick="procesaBoton('salmon')">
+					</td>
+				</tr>
+				<tr>
+					<td id="img-orange">
+						<input type="submit" style="background-color:orange;border: 0" value=" " onclick="procesaBoton('orange')">
+					</td>
+					<td id="img-dodgerblue">
+						<input type="submit" style="background-color:dodgerblue;border: 0" value="" onclick="procesaBoton('dodgerblue')">
+					</td>
+				</tr>
+				
+				
+				<!--emoji-->
+				<tr>
+					<td id="img-santa">
+						<input type="submit" style="background-color:transparent;border: 0" value="🎅" onclick="procesaBoton('santa')">
+					</td>
+					<td id="img-frosty">
+						<input type="submit" style="background-color:transparent;border: 0" value="⛄️" onclick="procesaBoton('frosty')">
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="img-aguacate">
+						<input type="submit" style="background-color:transparent;border: 0" value="🥑" onclick="procesaBoton('aguacate')">
+					</td>
+					<td id="img-pina">
+						<input type="submit" style="background-color:transparent;border: 0" value="🍍" onclick="procesaBoton('pina')">
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="img-dona">
+						<input type="submit" style="background-color:transparent;border: 0" value="🍩" onclick="procesaBoton('dona')">
+					</td>
+					<td id="img-futbol">
+						<input type="submit" style="background-color:transparent;border: 0" value="⚽️" onclick="procesaBoton('futbol')">
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="img-cohete">
+						<input type="submit" style="background-color:transparent;border: 0" value="🚀" onclick="procesaBoton('cohete')">
+					</td>
+					<td id="img-bus">
+						<input type="submit" style="background-color:transparent;border: 0" value="🚌" onclick="procesaBoton('bus')">
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="img-f1">
+						<input type="submit" style="background-color:transparent;border: 0" value="🏎" onclick="procesaBoton('f1')">
+					</td>
+					<td id="img-lapiz">
+						<input type="submit" style="background-color:transparent;border: 0" value="✏️" onclick="procesaBoton('lapiz')">
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="img-corazon">
+						<input type="submit" style="background-color:transparent;border: 0" value="❤️" onclick="procesaBoton('corazon')">
+					</td>
+					<td id="img-telefono">
+						<input type="submit" style="background-color:transparent;border: 0" value="📱" onclick="procesaBoton('telefono')">
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="img-leon">
+						<input type="submit" style="background-color:transparent;border: 0" value="🦁" onclick="procesaBoton('leon')">
+					</td>
+					<td id="img-feliz">
+						<input type="submit" style="background-color:transparent;border: 0" value="😀" onclick="procesaBoton('feliz')">
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="img-spock">
+						<input type="submit" style="background-color:transparent;border: 0" value="🖖" onclick="procesaBoton('spock')">
+					</td>
+					<td id="img-ok">
+						<input type="submit" style="background-color:transparent;border: 0" value="👍" onclick="procesaBoton('ok')">
+					</td>
+				</tr>
+				
+
+			</table>
+		</div>
+	</div>
+	<a href="h.html" id="fixedbutton">?</a>
+	</center>
+<script src="js/paint.js" type="text/javascript"></script>
+
+</body>
+</html>
